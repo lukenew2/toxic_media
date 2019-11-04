@@ -1,4 +1,4 @@
-# Project Proposal: Finding toxicity
+# Project Proposal: Finding Toxicity
 **Luke Newman**
 
 #### Domain
