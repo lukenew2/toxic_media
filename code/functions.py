@@ -90,9 +90,10 @@ def lsa(vectorized_words, dimensions):
 
 def evaluate_model(y_true, y_predicted):
     """
-    Evaluates performance of model by taking in true and predicted
-    y labels and returning accuracy, f1score, presicion and recall
+    performs cross validation of a model given training data by 
+    taking the mean of 4 cross-validation scores
     """
+
     accuracy = accuracy_score(y_true, y_predicted)
     
     precision = precision_score(y_true, y_predicted)
@@ -127,12 +128,13 @@ def roc_curve_plot(y_true, y_predicted_proba, y_predicted):
     Creates roc curve given true y values and 
     a model's predicted probabilities and predicted class
     """
+
     fpr, tpr, thr = roc_curve(y_true, y_predicted_proba[:,1])
     auc = roc_auc_score(y_true, y_predicted)
     lw = 2
     plt.figure(figsize=(8, 6))
     plt.plot(fpr, tpr, color='darkorange', lw=lw, label="Area Under Curve = %0.3f" % auc)
-    plt.plot([0, 1], [0, 1], color='green', lw=lw, linestyle='--')
+    plt.plot(y_true, y_true, color='green', lw=lw, linestyle='--')
     plt.xlabel('False Positive Rate')
     plt.ylabel('True Positive Rate')
     plt.title('Receiver Operating Characteristic Plot')
@@ -145,6 +147,7 @@ def most_important_words(vectorizer, model, number):
     and a model fitted to data.
     number is number of words wanted
     """
+
     word_indices = {word:index for index,word in vectorizer.vocabulary_.items()}
 
 # Stores each (word and importance) in a tuple that our model used for classifying each class
