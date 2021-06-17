@@ -2,7 +2,7 @@
 ---
 ## About
 
-*Disclaimer: This notebook contains text that is offensive due to the nature of the dataset.*
+*Disclaimer: This project contains text that is profane, vulgar, or offensive due to the nature of the dataset.*
 
 We live in an age where people's lives have become intertwined with their online presence allowing humans to engage with one another on a larger scale than ever before.  However, not all of these interactions foster growth.  People exploit the fact that their identity remains hidden and choose to target one another with unwarranted abuse causing harm instead of growth.  For our society to truly prosper from the digital age we have to combat this toxic behavior.  This will enable more and more people who are scared of what other people will think when they post on social media to engage freely without the fear of being the target of online hate.  
 
