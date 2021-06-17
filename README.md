@@ -1,7 +1,31 @@
 # Toxic Media
+---
+## About
 
-## Project Outline
+*Disclaimer: This notebook contains text that is offensive due to the nature of the dataset.*
 
-- Goal Definition: To track and detect how likely an online users comment will make another user leave a conversation in an effort to improve civility online.  By creating a web application users will be able to upload their comments and see how "toxic" their comment is before they post it on a social media platform.
-- Using the model we can perform an analysis of which social media platform or online forum is the most toxic: Twitter, Facebook, Reddit, Linkedin, or Instagram.
-- In this project false positives and false negatives will be weighted equally important.  To get an accurate estimate of how toxic each social media platform is, we'll want high recall and precision.  This makes us conclude that our preferred metric will be the F1 Score.
+We live in an age where people's lives have become intertwined with their online presence allowing humans to engage with one another on a larger scale than ever before.  However, not all of these interactions foster growth.  People exploit the fact that their identity remains hidden and choose to target one another with unwarranted abuse causing harm instead of growth.  For our society to truly prosper from the digital age we have to combat this toxic behavior.  This will enable more and more people who are scared of what other people will think when they post on social media to engage freely without the fear of being the target of online hate.  
+
+Our task is to improve civility on social media platforms (e.g., Twitter) and online comment forums (e.g., Reddit) by training a model that determines how likely a users comment will make another user leave a conversation.  With our model, we will create a web application that tracks how toxic each social media platform and online comment forum is to bring awareness to this issue and spark initiative to create a toxic free environment for all users.  
+
+This issue can only be solved with the help of everyone by encouraging kindness instead of spreading hate.
+
+## Data Description
+The dataset used in this project is from the kaggle competition: [Jigsaw Unintended Bias in Toxicity Classification](https://www.kaggle.com/c/jigsaw-unintended-bias-in-toxicity-classification/data).
+
+In 2017 the Civil Comments platform shutdown and released their archive of over 2 million public comments for researchers to study in an effort to improve civility online. Jigsaw funded the annotation of this data by human raters. 
+
+The column `target` is our toxicity label which contains a number between 0-1 denoting the fraction of human labelers that believed the comment would make someone else leave a conversation. 
+
+There are a lot of additional labels denoting the fraction of human labelers who believed the comment depicted several other sub-toxic labels and whether specific identity groups were mentioned in the comment. These columns will be **removed** from our analysis because in the production evironment, our input data will only be the text of the comment.
+
+### Labeling Schema
+As mentioned on Kaggle, each comment was shown to up to 10 human labelers.  The labelers were asked to rate how toxic each comment is. 
+* Very Toxic
+* Toxic
+* Hard to Say
+* Not Toxic
+
+The ratings were then aggragated into the `target` column.
+
+*Note: Some comments were shown to more than 10 human labelers because of sampling strategies to increase rating accuracy.*
