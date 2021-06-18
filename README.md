@@ -13,7 +13,7 @@ This issue can only be solved with the help of everyone by encouraging kindness 
 ## Data Description
 The dataset used in this project is from the kaggle competition: [Jigsaw Unintended Bias in Toxicity Classification](https://www.kaggle.com/c/jigsaw-unintended-bias-in-toxicity-classification/data).
 
-In 2017 the Civil Comments platform shutdown and released their archive of over 2 million public comments for researchers to study in an effort to improve civility online. Jigsaw funded the annotation of this data by human raters. 
+In 2017 the Civil Comments platform shutdown and released their archive of ~2 million public comments for researchers to study in an effort to improve civility online. Jigsaw funded the annotation of this data by human raters. 
 
 The column `toxicity` is our toxicity label which contains a number between 0-1 denoting the fraction of human labelers that believed the comment would make someone else leave a conversation. 
 
