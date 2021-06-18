@@ -1,8 +1,8 @@
 # Toxic Media
----
+
 ## About
 
-*Disclaimer: This project contains text that is profane, vulgar, or offensive due to the nature of the dataset.*
+*Disclaimer: This project contains text that is profane, vulgar, and offensive due to the nature of the dataset.*
 
 We live in an age where people's lives have become intertwined with their online presence allowing humans to engage with one another on a larger scale than ever before.  However, not all of these interactions foster growth.  People exploit the fact that their identity remains hidden and choose to target one another with unwarranted abuse causing harm instead of growth.  For our society to truly prosper from the digital age we have to combat this toxic behavior.  This will enable more and more people who are scared of what other people will think when they post on social media to engage freely without the fear of being the target of online hate.  
 
@@ -15,9 +15,11 @@ The dataset used in this project is from the kaggle competition: [Jigsaw Uninten
 
 In 2017 the Civil Comments platform shutdown and released their archive of over 2 million public comments for researchers to study in an effort to improve civility online. Jigsaw funded the annotation of this data by human raters. 
 
-The column `target` is our toxicity label which contains a number between 0-1 denoting the fraction of human labelers that believed the comment would make someone else leave a conversation. 
+The column `toxicity` is our toxicity label which contains a number between 0-1 denoting the fraction of human labelers that believed the comment would make someone else leave a conversation. 
 
-There are a lot of additional labels denoting the fraction of human labelers who believed the comment depicted several other sub-toxic labels and whether specific identity groups were mentioned in the comment. These columns will be **removed** from our analysis because in the production evironment, our input data will only be the text of the comment.
+For our analysis we'll define the comment as toxic (denoted 1) when the value of our target `toxicity` is greater than or equal to 0.5 otherwise we'll assign the instance to the negative class (denoted 0).
+
+There are a lot of additional labels denoting the fraction of human labelers who believed the comment depicted several other sub-toxic labels and whether specific identity groups were mentioned in the comment. These columns will be **removed** from our analysis because we will not have access to this data in the production environment.
 
 ### Labeling Schema
 As mentioned on Kaggle, each comment was shown to up to 10 human labelers.  The labelers were asked to rate how toxic each comment is. 
