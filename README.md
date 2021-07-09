@@ -8,7 +8,7 @@ We live in an age where people's lives have become intertwined with their online
 
 Our task is to improve civility on social media platforms (e.g., Twitter) and online comment forums (e.g., Reddit) by training a model that determines how likely a users comment will make another user leave a conversation.  With our model, we will create a web application that tracks how toxic each social media platform and online comment forum is to bring awareness to this issue and spark initiative to create a toxic free environment for all users.  
 
-This issue can only be solved with the help of everyone by encouraging kindness instead of spreading hate.
+This issue can only be solved with the help of everyone encouraging kindness instead of spreading hate.
 
 ## Data Description
 The dataset used in this project is from the kaggle competition: [Jigsaw Unintended Bias in Toxicity Classification](https://www.kaggle.com/c/jigsaw-unintended-bias-in-toxicity-classification/data).
