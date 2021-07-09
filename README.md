@@ -19,7 +19,7 @@ The column `toxicity` is our toxicity label which contains a number between 0-1 
 
 For our analysis we'll define the comment as toxic (denoted 1) when the value of our target `toxicity` is greater than or equal to 0.5 otherwise we'll assign the instance to the negative class (denoted 0).
 
-There are a lot of additional labels denoting the fraction of human labelers who believed the comment depicted several other sub-toxic labels and whether specific identity groups were mentioned in the comment. These columns will be **removed** from during training because we will not have access to this data in the production environment.  However, these columns will serve great use as tags in error analysis
+There are a lot of additional labels denoting the fraction of human labelers who believed the comment depicted several other sub-toxic labels and whether specific identity groups were mentioned in the comment. These columns will be **removed** during training because we will not have access to this data in the production environment.  However, these columns will serve great use as tags in error analysis
 so we can see exactly what groups of data our model is performing poorly on.
 
 ### Labeling Schema
