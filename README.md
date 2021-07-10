@@ -19,8 +19,41 @@ The column `toxicity` is our toxicity label which contains a number between 0-1 
 
 For our analysis we'll define the comment as toxic (denoted 1) when the value of our target `toxicity` is greater than or equal to 0.5 otherwise we'll assign the instance to the negative class (denoted 0).
 
-There are a lot of additional labels denoting the fraction of human labelers who believed the comment depicted several other sub-toxic labels and whether specific identity groups were mentioned in the comment. These columns will be **removed** during training because we will not have access to this data in the production environment.  However, these columns will serve great use as tags in error analysis
-so we can see exactly what groups of data our model is performing poorly on.
+There are a lot of additional labels denoting the fraction of human labelers who believed the comment depicted several other sub-toxic labels and whether specific identity attributes were mentioned in the comment. These subtype attributes are:
+* severe_toxicity
+* obscene
+* threat
+* insult
+* identity_attack
+* sexual_explicit
+* male
+* female
+* transgender
+* other_gender
+* heterosexual
+* homosexual_gay_or_lesbian
+* bisexual
+* other_sexual_orientation
+* christian
+* jewish
+* muslim
+* hindu
+* buddhist
+* atheist
+* other_religion
+* black
+* white
+* asian
+* latino
+* other_race_or_ethnicity
+* physical_disability
+* intellectual_or_learning_disability
+* psychiatric_or_mental_illness
+* other_disability
+
+It was also mentioned that different comments might have the exact same text, but labeled with different targets or sybtype attributes.
+
+These subtype attributes will be **removed** from the training schema because we will not have access to them in a production environment.  However, they will be very resourceful as tags used during error analysis to see where exactly our model is performing poorly on.
 
 ### Labeling Schema
 As mentioned on Kaggle, each comment was shown to up to 10 human labelers.  The labelers were asked to rate how toxic each comment is. 
@@ -30,5 +63,7 @@ As mentioned on Kaggle, each comment was shown to up to 10 human labelers.  The 
 * Not Toxic
 
 The ratings were then aggragated into the `target` column.
+
+The subtype attributes were collected by asking the human labelers whether the attribute was mentioned in the comment.  Then, taking these responses and aggregating them into a value between 0-1 representing the fraction of human labelers who believed the subtype attribute was mentioned in the comment.
 
 *Note: Some comments were shown to more than 10 human labelers because of sampling strategies to increase rating accuracy.*
